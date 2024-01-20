@@ -2,15 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Tutorial of Thymeleaf</title>
+    <title th:text="#{output.title}"></title>
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
-    <h2>出力画面</h2>
+    <h1 th:text="#{output.h1}"></h1>
+    <h2 th:text="#{output.h2}"></h2>
     <p th:text="'入力された値は「' + ${val} + '」です。'"></p>
     <form method="post" action="/input">
         <input type="hidden" name="previous" value=${val}>
-        <p><a th:href="@{/input(previous=${val})}">入力画面へ戻る</a></p>
+        <p><a th:href="@{/input(previous=${val})}" th:text="#{output.link}"></a></p>
     </form>
 </body>
 </html>
